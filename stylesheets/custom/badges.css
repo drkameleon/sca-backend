@@ -1,0 +1,82 @@
+/*
+Error: Undefined variable: "$border-color".
+        on line 17 of ./public/stylesheets/sass/custom/badges.scss
+
+12:     flex-direction: row;
+13: 
+14: 	margin-right: 5px;
+15: 	padding: 0;
+16: 	text-decoration: none;
+17: 	border: 2px solid mix(#000, $border-color, 25%);
+18: 	
+19: 	font-size: 0.9em;
+20: 	
+21: 	&.is7 {
+22: 		visibility: hidden;
+
+Backtrace:
+./public/stylesheets/sass/custom/badges.scss:17
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/script/tree/variable.rb:49:in `_perform'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/script/tree/node.rb:50:in `perform'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/script/tree/funcall.rb:182:in `perform_arg'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/script/tree/funcall.rb:129:in `block in _perform'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/script/tree/funcall.rb:129:in `each'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/script/tree/funcall.rb:129:in `each_with_index'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/script/tree/funcall.rb:129:in `each'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/script/tree/funcall.rb:129:in `map'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/script/tree/funcall.rb:129:in `_perform'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/script/tree/node.rb:50:in `perform'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/script/tree/list_literal.rb:75:in `block in _perform'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/script/tree/list_literal.rb:75:in `map'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/script/tree/list_literal.rb:75:in `_perform'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/script/tree/node.rb:50:in `perform'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:398:in `visit_prop'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:79:in `block in with_base'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:135:in `with_frame'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:79:in `with_base'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:440:in `block (2 levels) in visit_rule'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:440:in `map'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:440:in `block in visit_rule'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:438:in `visit_rule'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:79:in `block in with_base'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:135:in `with_frame'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:79:in `with_base'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `map'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:10:in `visit'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/root_node.rb:36:in `css_tree'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in `each'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/plugin.rb:82:in `update_stylesheets'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/plugin.rb:54:in `check_for_updates'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/plugin/rack.rb:51:in `call'
+/usr/local/rvm/gems/ruby-2.7.0/gems/puma-4.3.5/lib/puma/configuration.rb:228:in `call'
+/usr/local/rvm/gems/ruby-2.7.0/gems/puma-4.3.5/lib/puma/server.rb:713:in `handle_request'
+/usr/local/rvm/gems/ruby-2.7.0/gems/puma-4.3.5/lib/puma/server.rb:472:in `process_client'
+/usr/local/rvm/gems/ruby-2.7.0/gems/puma-4.3.5/lib/puma/server.rb:328:in `block in run'
+/usr/local/rvm/gems/ruby-2.7.0/gems/puma-4.3.5/lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined variable: \"$border-color\".\A         on line 17 of ./public/stylesheets/sass/custom/badges.scss\A \A 12:     flex-direction: row;\A 13: \A 14: 	margin-right: 5px;\A 15: 	padding: 0;\A 16: 	text-decoration: none;\A 17: 	border: 2px solid mix(#000, $border-color, 25%);\A 18: 	\A 19: 	font-size: 0.9em;\A 20: 	\A 21: 	&.is7 {\A 22: 		visibility: hidden;"; }

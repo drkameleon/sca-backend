@@ -1,0 +1,85 @@
+/*
+Error: Undefined mixin 'breakpoint'.
+        on line 19 of ./public/stylesheets/sass/custom/tiles.scss, in `breakpoint'
+        from line 19 of ./public/stylesheets/sass/custom/tiles.scss
+
+14: 
+15: 	.tile {
+16: 
+17: 		flex: 0 1 29%;
+18: 
+19: 		@include breakpoint(max-width $medium-wide) {
+20: 	 		flex: 0 1 29%;
+21: 		}
+22: 
+23: 		@include breakpoint(max-width $medium) {
+24: 	 		flex: 0 1 45%;
+
+Backtrace:
+./public/stylesheets/sass/custom/tiles.scss:19:in `breakpoint'
+./public/stylesheets/sass/custom/tiles.scss:19
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:348:in `block in visit_mixin'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:98:in `block in with_mixin'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:135:in `with_frame'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:98:in `with_mixin'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:346:in `visit_mixin'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:79:in `block in with_base'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:135:in `with_frame'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:79:in `with_base'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:440:in `block (2 levels) in visit_rule'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:440:in `map'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:440:in `block in visit_rule'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:438:in `visit_rule'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:79:in `block in with_base'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:135:in `with_frame'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:79:in `with_base'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:440:in `block (2 levels) in visit_rule'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:440:in `map'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:440:in `block in visit_rule'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:438:in `visit_rule'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:79:in `block in with_base'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:135:in `with_frame'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:79:in `with_base'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `map'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:10:in `visit'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/root_node.rb:36:in `css_tree'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in `each'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/plugin.rb:82:in `update_stylesheets'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/plugin.rb:54:in `check_for_updates'
+/usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/plugin/rack.rb:51:in `call'
+/usr/local/rvm/gems/ruby-2.7.0/gems/puma-4.3.5/lib/puma/configuration.rb:228:in `call'
+/usr/local/rvm/gems/ruby-2.7.0/gems/puma-4.3.5/lib/puma/server.rb:713:in `handle_request'
+/usr/local/rvm/gems/ruby-2.7.0/gems/puma-4.3.5/lib/puma/server.rb:472:in `process_client'
+/usr/local/rvm/gems/ruby-2.7.0/gems/puma-4.3.5/lib/puma/server.rb:328:in `block in run'
+/usr/local/rvm/gems/ruby-2.7.0/gems/puma-4.3.5/lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined mixin 'breakpoint'.\A         on line 19 of ./public/stylesheets/sass/custom/tiles.scss, in `breakpoint'\A         from line 19 of ./public/stylesheets/sass/custom/tiles.scss\A \A 14: \A 15: 	.tile {\A 16: \A 17: 		flex: 0 1 29%;\A 18: \A 19: 		@include breakpoint(max-width $medium-wide) {\A 20: 	 		flex: 0 1 29%;\A 21: 		}\A 22: \A 23: 		@include breakpoint(max-width $medium) {\A 24: 	 		flex: 0 1 45%;"; }
