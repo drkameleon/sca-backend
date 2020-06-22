@@ -496,8 +496,10 @@ $(document).ready(function(){
 
     // Execute stack of OnLoad functions
 
-    for (var i=0; i<window.onloadFunctions.length; i++) {
-        onloadFunctions[i]();
+    if (typeof window.onloadFunctions !== 'undefined') {
+        for (var i=0; i<window.onloadFunctions.length; i++) {
+            onloadFunctions[i]();
+        }
     }
 
 });
