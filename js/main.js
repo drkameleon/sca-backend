@@ -379,7 +379,7 @@ $(document).ready(function(){
 
     $.ajax({
         type: "GET",
-        url: "/_/indexes"
+        url: window.rsrcroot + "/static/dict_index.json"
     }).done(function(response){
         var wordindex = JSON.parse(response);
         window.searchurl = {
