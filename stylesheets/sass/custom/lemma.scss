@@ -1,0 +1,744 @@
+/***************************************
+ Standard Chinese Academy
+ Website
+
+ Dictionary pages
+
+ @file: lemma.scss
+ ***************************************/
+
+#lemma_main {
+ 	text-align: center;
+ 	margin-bottom: 2em;
+
+ 	h1.lemma {
+    	font-size: 5rem !important; 
+    	text-align:center;
+    	// margin-top: 1rem;
+    	margin-bottom: 0;
+
+    	text-shadow: -1px 0px 3px rgba(150, 150, 150, 1);
+
+    	&.smaller {
+    		font-size: 4rem !important;
+    	}
+
+    	&.grammar {
+    		font-size: 2rem !important;
+    		margin-bottom: 1rem;
+    	}
+
+    	@include breakpoint(max-width $large) {
+    		text-shadow: -1px 0px 1px rgba(150, 150, 150, 1);
+    	}
+  	}
+
+  	h2.pinyin {
+    	color: gray;
+    	text-align:center;
+    	margin-top: 0;
+    	margin-bottom: 1.2rem;
+    	border-bottom: 0;
+    	font-weight: 500;
+
+    	position: relative;
+  	}
+}
+
+.lemma_section {
+
+	&.text {
+		margin-top: 1.5rem;
+	}
+
+ 	.lemma_section_header {
+
+ 		margin: 1.5rem 0 0.5rem;
+    	padding-bottom: 0.3rem;
+    	font-weight: 400;
+    	padding-left: 1rem;
+    	padding-right: 1rem;
+
+    	.expander {
+    		float: right;
+    		cursor: pointer;
+    		margin-left: 1rem;
+
+    		transform: rotate(0deg);
+
+    		&:hover {
+    			color: $primary-color;
+    		}
+
+    		span {
+    			transition: all .1s linear;
+    		}
+
+    		&.expander-on {
+    			transform: rotate(-180deg);
+    		}
+    	}
+
+    	.switch_options {
+    		float: right;
+
+    		.switchbox {
+
+    			label {
+				    display: table-caption;
+				    background-color: rgba(255, 255, 255, .9);
+				    border: 2px solid rgba(139, 139, 139, .3);
+				    color: #adadad;
+				    border-radius: 25px;
+				    white-space: nowrap;
+				    margin: 3px 0px;
+				    -webkit-touch-callout: none;
+				    -webkit-user-select: none;
+				    -moz-user-select: none;
+				    -ms-user-select: none;
+				    user-select: none;
+				    -webkit-tap-highlight-color: transparent;
+				    transition: all .2s;
+
+				    padding-left:0.4rem;
+					padding-right:0.4rem;
+					font-size:0.5rem;
+				    cursor: pointer;
+
+				    &:before {
+				    	display: inline-block;
+					    font-style: normal;
+					    font-variant: normal;
+					    text-rendering: auto;
+					    -webkit-font-smoothing: antialiased;
+					    font-family: "Font Awesome 5 Free";
+					    font-weight: 900;
+					    font-size: 12px;
+					    padding: 2px 6px 2px 2px;
+					    content: "\f067";
+					    transition: transform .3s ease-in-out;
+				    }
+				}
+
+				input[type="checkbox"] {
+					position: absolute;
+  					opacity: 0;
+
+  					&:checked + label {
+  						border: 2px solid #820606; //#279ddC;
+					    background-color: #a20707; //#47bdFC;
+					    color: #fff;
+					    transition: all .2s;
+
+					    &::before {
+					    	content: "\f00c";
+						    transform: rotate(-360deg);
+						    transition: transform .3s ease-in-out;
+					    }
+  					}
+				}
+			}
+		}
+	}
+}
+
+@mixin lemma_generic_container {
+ 	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+
+	@include breakpoint(max-width $large) {
+		flex-direction: column;
+	}
+}
+
+.lemma_definition_container {
+	@include lemma_generic_container;
+
+	flex-direction: column;
+
+    .lemma_definition {
+		flex: 1 1 40%;
+
+		display: flex;
+		flex-direction: column;
+
+	    padding: 0em;
+	    margin: 10px;
+	    background: white;
+	    border: 1px solid #DDD;
+
+	    box-shadow: 0 4px 9px #CCC;
+	    -webkit-box-shadow: 0 0 10px #ccc;
+
+	    .lemma_definition_variant {
+			color: gray;
+			border-bottom: 1px solid #CCC;
+			padding: 1.0rem;
+			margin: 0;
+			font-weight: 500;
+			font-size: 1.0rem;
+		}
+   
+	   	.lemma_definition_content {
+
+	   		display: flex;
+	   		flex-direction: column;
+			height: 100%;
+
+			border-radius: 0px;
+		    padding: 1rem;
+		    padding-top: 0.8rem;
+		    padding-bottom: 0.8rem;
+		    margin: 0 !important;
+		    font-size: 0.8em !important;
+		    text-indent: initial;
+    		background-color: mix(#fff, #3fa63f, 90%);
+    		box-shadow: 0 1px 1px rgba(59, 156, 186, 0.25);
+
+    		font-weight: 300;
+
+		}
+
+	}
+}
+
+.lemma_charbox_container {
+	@include lemma_generic_container;
+
+	.lemma_charbox {
+		flex: 1 1 40%;
+
+		display: flex;
+		flex-direction: column;
+
+	    padding: 0em;
+	    margin: 10px;
+	    background: white;
+	    border: 1px solid #DDD;
+
+	    box-shadow: 0 4px 9px #CCC;
+	    -webkit-box-shadow: 0 0 10px #ccc;
+
+	    .lemma_charbox_variant {
+			color: gray;
+			border-bottom: 1px solid #CCC;
+			padding: 1.0rem;
+			margin: 0;
+			font-weight: 500;
+			font-size: 1.0rem;
+
+			.downloader {
+	    		float: right;
+	    		cursor: pointer;
+	    		margin-left: 1rem;
+	    		color: black !important;
+
+	    		transform: rotate(0deg);
+
+	    		&:hover {
+	    			span {
+	    				color: $primary-color;
+	    				font-weight: bold;
+	    			}
+	    		}
+
+	    		span {
+	    			transition: all 0.2s ease-in-out;
+	    		}
+	    	}
+		}
+   
+	   	.lemma_charbox_content {
+
+	   		display: flex;
+	   		flex-direction: column;
+			height: 100%;
+
+		    .lemma_charbox_strokes {
+		    	flex: 1 0 auto;
+
+		   		font-size: 0.75em !important;
+	    		text-indent: initial;
+	    		padding: 1.0rem;
+	    		padding-top: 0.8rem;
+	    		padding-bottom: 0.8rem;
+	    		margin: 0 !important;
+	    		background: white;
+	    		
+
+	    		display: flex;
+	    		flex-wrap: wrap;
+  				justify-content: center;
+  				align-items: center;
+  				flex-direction: row;
+
+	    		img.charstroke {
+					height: 70px;
+
+					@include breakpoint(max-width $large) {
+						height: 60px;
+					}
+
+					@include breakpoint(max-width $small) {
+						height: 50px;
+					}
+				}
+		    }
+
+		    .lemma_charbox_decomposition {
+		    	flex: 0 0 auto;
+
+		    	border-radius: 0px;
+			    padding: 0.4rem;
+			    padding-top: 0.3rem;
+			    padding-bottom: 0.3rem;
+			    text-align: center;
+			    margin: 0 !important;
+			    font-size: 0.8rem !important;
+			    text-indent: initial;
+	    		background-color: #f6f6f6;
+    			border-bottom: 1px solid #ddd;
+	    		box-shadow: 0 1px 1px rgba(59, 156, 186, 0.25);
+
+	    		font-weight: 700;
+
+	    		span.plus_sign {
+	    			font-weight: 300;
+	    		}
+			}
+
+		    .lemma_charbox_definition {
+		    	flex: 0 0 auto;
+
+		    	border-radius: 0px;
+			    padding: 1.0rem;
+	    		padding-top: 0.8rem;
+	    		padding-bottom: 0.8rem;
+			    margin: 0 !important;
+			    font-size: 0.8rem !important;
+			    text-indent: initial;
+	    		background-color: #ebf5f8;
+	    		box-shadow: 0 1px 1px rgba(59, 156, 186, 0.25);
+
+	    		font-weight: 300;
+			}
+
+		}
+
+	}
+}
+
+.lemma_sentence_wrapper {
+
+	.lemma_sentence_container {
+		@include lemma_generic_container;
+
+		.lemma_sentence {
+			flex: 1 1 40%;
+
+			display: flex;
+			flex-direction: column;
+
+		    padding: 0em;
+		    margin: 10px;
+		    background: white;
+		    border: 1px solid #DDD;
+
+		    text-align:center;
+
+		    box-shadow: 0 4px 9px #CCC;
+		    -webkit-box-shadow: 0 0 10px #ccc;
+
+		    &.hidden_sentence {
+		    	display: none;
+		    }
+
+		    .lemma_sentence_content {
+
+		    	display: flex;
+		   		flex-direction: column;
+				height: 100%;
+
+			    .lemma_sentence_original {
+			    	flex: 1 0 auto;
+			    	
+		    		text-indent: initial;
+		    		padding: 1.0rem;
+
+		    		display: flex;
+	  				justify-content: center;
+	  				align-items: center;
+
+	  				&.is_english {
+	  					font-size: 0.8rem !important;
+	  					font-weight: 300;
+
+	  					div {
+	  						padding: 0.5rem;
+	  					}
+	  				}
+
+	  				&.is_chinese {
+	  					font-size: 1rem !important;
+	  					font-weight: 400;
+	  				}
+			    }
+
+			    .lemma_sentence_translation {
+			    	flex: 0 0 auto;
+
+			    	border-radius: 0px;
+				    padding: 1.0rem;
+	    			padding-top: 0.8rem;
+	    			padding-bottom: 0.8rem;
+				    margin: 0 !important;
+				    text-indent: initial;
+		    		background-color: #FCF2E6;
+		    		box-shadow: 0 1px 1px rgba(59, 156, 186, 0.25);
+
+		    		display: flex;
+	  				justify-content: center;
+	  				align-items: center;
+
+	  				&.is_english {
+	  					font-size: 0.8rem !important;
+	  					font-weight: 300;
+	  				}
+
+	  				&.is_chinese {
+	  					font-size: 1rem !important;
+	  					font-weight: 400;
+	  				}
+
+	  				&.hideTranslation {
+						display:none;
+					}
+			    }
+
+			    span {
+			    	font-weight: 500;
+
+			    	&.unhighlighted {
+			    		color: black !important; 
+			    	}
+			    }
+
+			}
+
+		}
+	}
+
+	#showmore_container {
+		text-align: center; 
+		margin-top: 1em;
+	}
+}
+
+.lemma_related_container {
+	padding: 1rem;
+
+    margin: 10px;
+    background: white;
+    border: 1px solid #DDD;
+
+    box-shadow: 0 4px 9px #CCC;
+    -webkit-box-shadow: 0 0 10px #ccc;
+
+    table {
+    	display: table;
+    	margin-top: 0;
+    	margin-bottom: 0;
+
+    	tr, td {
+    		border-color: #ddd;
+    	}
+
+    	td {
+    		padding-top: 1em;
+			font-size:1.2em;
+
+			&:first-child {
+				width: 3rem;
+			}
+    	}
+
+    	tr:last-child td {
+    		border: 0;
+    	}
+
+    	&.twocolumns {
+    		td {
+    			&:first-child {
+    				width: inherit;
+    			}
+    		}
+    	}
+    }
+}
+
+.lemma_pattern_container {
+	@include lemma_generic_container;
+
+	.lemma_pattern {
+		flex: 1 1 40%;
+
+		display: flex;
+		flex-direction: column;
+
+	    padding: 0em;
+	    margin: 10px;
+	    background: white;
+	    border: 1px solid #DDD;
+
+	    box-shadow: 0 4px 9px #CCC;
+	    -webkit-box-shadow: 0 0 10px #ccc;
+
+	    .lemma_pattern_title {
+			color: gray;
+			border-bottom: 1px solid #CCC;
+			padding: 1.0rem;
+			margin: 0;
+			font-weight: 500;
+			font-size: 1.0rem;
+
+			.downloader {
+	    		float: right;
+	    		cursor: pointer;
+	    		margin-left: 1rem;
+	    		color: black !important;
+
+	    		transform: rotate(0deg);
+
+	    		&:hover {
+	    			span {
+	    				color: $primary-color;
+	    				font-weight: bold;
+	    			}
+	    		}
+
+	    		span {
+	    			transition: all 0.2s ease-in-out;
+	    		}
+	    	}
+		}
+   
+	   	.lemma_pattern_content {
+
+	   		display: flex;
+	   		flex-direction: column;
+			height: 100%;
+
+		    .lemma_pattern_pattern {
+		    	flex: 1 0 auto;
+
+		   		font-size: 0.75em !important;
+	    		text-indent: initial;
+	    		padding: 1.0rem;
+	    		padding-top: 0.8rem;
+	    		padding-bottom: 0.8rem;
+	    		margin: 0 !important;
+	    		background: white;
+	    		
+
+	    		display: flex;
+	    		flex-wrap: wrap;
+  				justify-content: center;
+  				align-items: inherit;
+  				flex-direction: row;
+
+	    		.pattern_block {
+					display: flex;
+					flex-direction: column;
+					flex: 1 1 auto;
+					align-items: center;
+					justify-content: space-between;
+
+					.pattern_item {
+						padding-top: 0.5rem;
+		  				padding-bottom: 0.5rem;
+
+		  				font-size: 1.2rem;
+
+		  				ruby {
+		  					font-size: 1.2rem;
+
+		  					rt {
+		  						font-size: 0.7rem;
+		  					}
+		  				}
+
+		  				//text-shadow: 0px 0px 1px rgba(150, 150, 150, 1);
+					}
+
+					&.highlighted {
+					    font-weight: 500;
+					    color: black;
+					    border: 3px solid #CCC;
+					    border-radius: 1.5rem;
+
+					    //text-shadow: none;
+		  			}
+
+		  			&.plus {
+		  				justify-content: center;
+
+		  				&::before {
+							content: '+';
+							font-weight: 900;
+							font-size: 1.2rem;
+						}
+		  			}
+				}
+		    }
+
+		    .lemma_pattern_translation {
+		    	flex: 0 0 auto;
+
+		    	border-radius: 0px;
+			    padding: 1.0rem;
+	    		padding-top: 0.8rem;
+	    		padding-bottom: 0.8rem;
+			    margin: 0 !important;
+			    font-size: 0.8rem !important;
+			    text-indent: initial;
+	    		background-color: #EEE; // #f5ebf8; //#ebf5f8;
+	    		box-shadow: 0 1px 1px rgba(59, 156, 186, 0.25);
+
+	    		font-weight: 300;
+	    		text-align: center;
+			}
+
+		}
+
+	}
+}
+
+.lemma_theory_container {
+	@include lemma_generic_container;
+
+	.lemma_theory {
+		flex: 1 1 40%;
+
+		text-align: justify;
+
+	    padding: 1rem;
+	    margin: 10px;
+	    background: white;
+	    border: 1px solid #DDD;
+
+	    box-shadow: 0 4px 9px #CCC;
+	    -webkit-box-shadow: 0 0 10px #ccc;
+
+	    padding-left: 2rem;
+    	padding-right: 2rem;
+
+    	font-weight: 300;
+
+    	h1, h2, h3, h4, h5, h6 {
+    		font-weight: 500;
+    		color: #333;
+    	}
+
+    	h4:first-child {
+    		margin-top: 1.5rem;
+    	}
+
+    	u {
+    		border-bottom: 1px dashed $text-color !important;
+    		margin-right: 0.5rem;
+    		margin-left: 0.2rem;
+    	}
+	}
+}
+
+.letter {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  margin: 26px auto 0;
+  max-width: 550px;
+  min-height: 300px;
+  padding: 24px;
+  position: relative;
+  width: 80%;
+}
+.letter:before, .letter:after {
+  content: "";
+  height: 98%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+.letter:before {
+  background: #fafafa;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  left: -5px;
+  top: 4px;
+  transform: rotate(-2.5deg);
+}
+.letter:after {
+  background: #f6f6f6;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  right: -3px;
+  top: 1px;
+  transform: rotate(1.4deg);
+}
+
+.lemma_text_container {
+	@include lemma_generic_container;
+
+	.lemma_text {
+		flex: 1 1 40%;
+
+		text-align: justify;
+
+	    padding: 1rem;
+	    margin: 10px;
+	    background: #FbFbF8;
+	    background-image: url("../images/natural.png");
+  		background-repeat: repeat-y;
+	    border: 1px solid #DDD;
+
+	    box-shadow: 0 4px 9px #CCC;
+	    -webkit-box-shadow: 0 0 10px #ccc;
+
+	    padding-left: 2rem;
+    	padding-right: 2rem;
+    	overflow-wrap: break-word;
+
+    	font-weight: 300;
+
+    	h1, h2, h3, h4, h5, h6 {
+    		font-weight: 500;
+    		color: #333;
+    	}
+
+    	u {
+    		border-bottom: 1px dashed $text-color !important;
+    		margin-right: 0.5rem;
+    		margin-left: 0.2rem;
+    	}
+
+    	span[sca-trans] {
+    		border-radius: 0.3rem;
+    		padding: 0.2rem;
+    		overflow-wrap: break-word;
+
+    		&:hover {
+    			//border: 1px solid #888;
+    			background: yellow; //cyan;//yellow;
+    		}
+    	}
+
+    	p {
+    		margin-top: 0.7rem !important;
+    		margin-bottom: 0 !important;
+    		font-size: 1rem;
+    		text-align: justify;
+
+    		ruby {
+    			line-height: 2rem !important;
+    		}
+    	}
+	}
+}

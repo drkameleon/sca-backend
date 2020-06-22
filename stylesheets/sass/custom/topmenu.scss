@@ -1,0 +1,354 @@
+/***************************************
+ Standard Chinese Academy
+ Website
+
+ The topmost navigation
+
+ @file: topmenu.scss
+ ***************************************/
+
+.visually-hidden {
+	position: absolute !important;
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px !important;
+	width: 1px !important;
+	border: 0 !important;
+	overflow: hidden;
+}
+
+body:hover .visually-hidden a,
+body:hover .visually-hidden input,
+body:hover .visually-hidden button {
+	display: none !important;
+}
+
+#topmenu {
+	position: relative;
+	border-bottom: 1px solid $border-color;
+	-webkit-animation: $intro-transition;
+	animation: $intro-transition;
+	-webkit-animation-delay: 0.15s;
+	animation-delay: 0.15s;
+	z-index: 2000;
+
+	#topmenu-wrapper {
+		@include clearfix;
+
+	    margin-left: auto;
+	    margin-right: auto;
+	    padding: 1em;
+	    max-width: 100%;
+	    display: -webkit-box;
+	    display: -ms-flexbox;
+	    display: flex;
+	    -webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	    justify-content: space-between;
+	    font-family: $sans-serif-narrow;
+
+	    @include breakpoint($x-large) {
+	      max-width: $max-width;
+	    }
+
+		#topmenu-contents {
+			float: left;
+			margin-left: 0;
+			margin-right: 0;
+			width: 100%;
+			clear: both;
+
+			ul {
+				margin: 0;
+				padding: 0;
+				clear: both;
+				list-style-type: none;
+			}
+
+			.greedy-nav {
+				position: relative;
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-align: center;
+				-ms-flex-align: center;
+				align-items: center;
+				min-height: $nav-height;
+				background: $background-color;
+
+				a {
+					display: block;
+					margin: 0 1rem;
+					color: $masthead-link-color;
+					text-decoration: none;
+
+					&:hover {
+						color: $masthead-link-color-hover;
+					}
+
+					&.site-logo {
+						margin-left: 0;
+						margin-right: 0.5rem;
+
+						img {
+							//max-height: 2rem;
+							width: 6rem;
+						}
+					}
+
+					&.site-title {
+						margin-left: 0;
+					}
+				}
+
+				&__toggle {
+					-ms-flex-item-align: center;
+					align-self: center;
+					height: $nav-toggle-height;
+					border: 0;
+					outline: none;
+					background-color: transparent;
+					cursor: pointer;
+
+					&.hidden,
+					&.is--hidden {
+						display: none;
+						visibility: hidden;
+					}
+
+
+					&:before {
+						@supports (pointer-events: none) {
+							content: '';
+							position: fixed;
+							top: 0;
+							left: 0;
+							width: 100%;
+							height: 100%;
+							opacity: 0;
+							background-color: $background-color;
+							-webkit-transition: $global-transition;
+							transition: $global-transition;
+							pointer-events: none;
+						}
+					}
+
+					&.close {
+						&:before {
+							opacity: 0.9;
+							-webkit-transition: $global-transition;
+							transition: $global-transition;
+							pointer-events: auto;
+						}
+					}
+
+					.navicon {
+						position: relative;
+						width: $navicon-width;
+						height: $navicon-height;
+						background: $primary-color;
+						margin: auto;
+						-webkit-transition: 0.3s;
+						transition: 0.3s;
+
+						&:before,
+						&:after {
+							content: "";
+							position: absolute;
+							left: 0;
+							width: $navicon-width;
+							height: $navicon-height;
+							background: $primary-color;
+							-webkit-transition: 0.3s;
+							transition: 0.3s;
+						}
+
+						&:before {
+							top: (-2 * $navicon-height);
+						}
+
+						&:after {
+							bottom: (-2 * $navicon-height);
+						}
+					}
+
+					.close .navicon {
+						/* hide the middle line*/
+						background: transparent;
+
+						/* overlay the lines by setting both their top values to 0*/
+						&:before,
+						&:after {
+							-webkit-transform-origin: 50% 50%;
+							-ms-transform-origin: 50% 50%;
+							transform-origin: 50% 50%;
+							top: 0;
+							width: $navicon-width;
+						}
+
+						/* rotate the lines to form the x shape*/
+						&:before {
+							-webkit-transform: rotate3d(0, 0, 1, 45deg);
+							transform: rotate3d(0, 0, 1, 45deg);
+						}
+						&:after {
+							-webkit-transform: rotate3d(0, 0, 1, -45deg);
+							transform: rotate3d(0, 0, 1, -45deg);
+						}
+					}
+
+					&:hover {
+						.navicon,
+						.navicon:before,
+						.navicon:after {
+							background: mix(#000, $primary-color, 25%);
+						}
+
+						&.close {
+							.navicon {
+								background: transparent;
+							}
+						}
+					}
+				}
+
+				.visible-links {
+					display: -webkit-box;
+					display: -ms-flexbox;
+					display: flex;
+					-webkit-box-pack: end;
+					-ms-flex-pack: end;
+					justify-content: flex-end;
+					-webkit-box-flex: 1;
+					-ms-flex: 1;
+					flex: 1;
+					overflow: hidden;
+					font-weight: 400;
+
+					li {
+						-webkit-box-flex: 0;
+						-ms-flex: none;
+						flex: none;
+						display: block;
+						list-style-type: none;
+						white-space: nowrap;
+
+						&.bordered-left {
+							border-left: 1px solid #CCC;
+
+							@include breakpoint(max-width $medium) {
+								border-left: 0;
+							}
+
+							a {
+								margin-right: 0;
+							}
+						}
+					}
+
+					a {
+						position: relative;
+
+						&:before {
+							content: "";
+							position: absolute;
+							left: 0;
+							bottom: 0;
+							height: 4px;
+							background: $primary-color;
+							width: 100%;
+							-webkit-transition: $global-transition;
+							transition: $global-transition;
+							-webkit-transform: scaleX(0) translate3d(0, 0, 0);
+							transform: scaleX(0) translate3d(0, 0, 0); // hide
+						}
+
+						&:hover:before {
+							-webkit-transform: scaleX(1);
+							-ms-transform: scaleX(1);
+							transform: scaleX(1); // reveal
+						}
+
+						&.active {
+							color: $primary-color;
+							//font-weight: 500;
+
+							&:before {
+								content: '&#9724; '
+							}
+
+							&:hover:before {
+								-webkit-transform: scaleX(0);
+								-ms-transform: scaleX(0);
+								transform: scaleX(0); // reveal
+							}
+						}
+					}
+				}
+
+				.hidden-links {
+					position: absolute;
+					top: 100%;
+					right: 0;
+					margin-top: 15px;
+					padding: 5px;
+					border: 1px solid $border-color;
+					background: $background-color;
+					-webkit-box-shadow: 0 2px 4px 0 rgba(#000, 0.16),
+					0 2px 10px 0 rgba(#000, 0.12);
+					box-shadow: 0 2px 4px 0 rgba(#000, 0.16), 0 2px 10px 0 rgba(#000, 0.12);
+
+					&.hidden {
+						display: none;
+					}
+
+					a {
+						margin: 0;
+						padding: 10px 20px;
+						font-size: $type-size-5;
+
+						&:hover {
+							color: $masthead-link-color-hover;
+							background: $navicon-link-color-hover;
+						}
+					}
+
+					&:before {
+						content: "";
+						position: absolute;
+						top: -11px;
+						right: 10px;
+						width: 0;
+						border-style: solid;
+						border-width: 0 10px 10px;
+						border-color: $border-color transparent;
+						display: block;
+						z-index: 0;
+					}
+
+					&:after {
+						content: "";
+						position: absolute;
+						top: -10px;
+						right: 10px;
+						width: 0;
+						border-style: solid;
+						border-width: 0 10px 10px;
+						border-color: $background-color transparent;
+						display: block;
+						z-index: 1;
+					}
+
+					li {
+						display: block;
+						border-bottom: 1px solid $border-color;
+
+						&:last-child {
+							border-bottom: none;
+						}
+					}
+				}
+			}
+
+		}
+	}
+}

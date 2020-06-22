@@ -1,0 +1,100 @@
+/***************************************
+ Standard Chinese Academy
+ Website
+
+ Badges, etc
+
+ @file: badges.scss
+ ***************************************/
+
+ .hskbadge{
+	display: inline-flex;
+    flex-direction: row;
+
+	margin-right: 5px;
+	padding: 0;
+	text-decoration: none;
+	border: 2px solid mix(#000, $border-color, 25%);
+	
+	font-size: 0.9em;
+	
+	&.is7 {
+		visibility: hidden;
+	}
+
+	div.hsk {
+		flex: 1 0 auto;
+    
+	    justify-content: center;
+	    align-items: center;
+	    display: flex;
+
+		padding-left:5px;
+		padding-right:5px;
+		line-height: 1.5em;
+    	font-size: 0.8em;
+    	font-weight: 600;
+
+    	&.hsk1 { color: $hsk1; }
+    	&.hsk2 { color: $hsk2; }
+    	&.hsk3 { color: $hsk3; }
+    	&.hsk4 { color: $hsk4; }
+    	&.hsk5 { color: $hsk5; }
+    	&.hsk6 { color: $hsk6; }
+    	&.hsk7 { color: black; }
+	}
+
+	div.level {
+		flex: 1 0 auto;
+    
+	    justify-content: center;
+	    align-items: center;
+	    display: flex;
+
+		color: white;
+    	font-weight: 500;
+
+    	width: 1.2rem;
+
+    	&.hsk1 { background: $hsk1; }
+    	&.hsk2 { background: $hsk2; }
+    	&.hsk3 { background: $hsk3; }
+    	&.hsk4 { background: $hsk4; }
+    	&.hsk5 { background: $hsk5; }
+    	&.hsk6 { background: $hsk6; }
+    	&.hsk7 { background: black; }
+	}
+
+	&.mini, &.midi {
+		border: 0;
+
+		div.hsk {
+			display: none;
+		}
+
+		div.level {
+			border-radius: 50%;
+			width: 1.4rem;
+			height: 1.4rem;
+		}
+	}
+
+	&.mini {
+		-webkit-transform: scaleX(0.8) scaleY(0.8);
+		-ms-transform: scaleX(0.8) scaleY(0.8);
+		transform: scaleX(0.8) scaleY(0.8);
+	}
+
+	// &.midi {
+	// 	border: 0;
+
+	// 	span.hsk {
+	// 		color: black !important;
+	// 	}
+
+	// 	span.level {
+	// 		border-radius: 7px;
+	// 		padding-bottom: 0.3em;
+	// 	}
+	// }
+}

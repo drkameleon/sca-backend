@@ -1,0 +1,131 @@
+/***************************************
+ Standard Chinese Academy
+ Website
+
+ Tool styling
+
+ @file: tool.scss
+ ***************************************/
+
+#annotator-tool {
+	textarea#text-input {
+		border: 3px solid #DDD;
+	}
+
+	#annotator-button-container {
+		text-align: center;
+	}
+
+	#annotator-result {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		padding: 1rem;
+    	margin-top: 2rem;
+    	border: 3px solid $primary-color;
+    	visibility: hidden;
+    	justify-content: space-evenly;
+
+		.annotated-word {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+    		align-items: center;
+    		margin: 0.5rem;
+
+			ruby {
+
+			}
+
+			.translation {
+				font-size: 0.7rem;
+			}
+		}
+	}
+}
+
+#converter-tool {
+	textarea#text-input {
+		border: 3px solid #DDD;
+	}
+
+	#converter-button-container {
+		text-align: left;
+	}
+
+	.converter_options {
+		display: inline-flex;
+    	float: right;
+	}
+
+	#converter-result {
+		//display: flex;
+		//flex-direction: row;
+		//flex-wrap: wrap;
+		padding: 1rem;
+    	margin-top: 2rem;
+    	border: 3px solid $primary-color;
+    	visibility: hidden;
+    	//justify-content: space-evenly;
+    	text-align: justify;
+	}
+}
+
+.radiomark_container {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 22px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	font-size:0.8rem;
+
+	margin-left: 1rem;
+
+	input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		height: 0;
+		width: 0;
+
+		&:checked ~ .radiomark { 
+			background-color: #2196F3; 
+		}
+
+		&:checked ~ .radiomark:after {
+			display: block;
+		}
+	}
+
+	&:hover input ~ .radiomark {
+		background-color: #ccc;
+	}
+
+	.radiomark {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 25px;
+		width: 25px;
+		background-color: #eee;
+		border-radius: 50%;
+
+		&:after {
+			content: "";
+			position: absolute;
+			display: none;
+		 	top: 9px;
+			left: 9px;
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background: white;
+		}
+	}
+}

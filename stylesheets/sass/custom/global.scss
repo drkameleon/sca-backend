@@ -1,0 +1,250 @@
+/***************************************
+ Standard Chinese Academy
+ Website
+
+ General styles
+
+ @file: global.scss
+ ***************************************/
+
+// HSK coloring
+
+.hsk1fg { color: $hsk1 !important; }
+.hsk2fg { color: $hsk2 !important; }
+.hsk3fg { color: $hsk3 !important; }
+.hsk4fg { color: $hsk4 !important; }
+.hsk5fg { color: $hsk5 !important; }
+.hsk6fg { color: $hsk6 !important; }
+.hsk7fg { color: $hsk7 !important; }
+
+.hsk1bg { background: $hsk1 !important; }
+.hsk2bg { background: $hsk2 !important; }
+.hsk3bg { background: $hsk3 !important; }
+.hsk4bg { background: $hsk4 !important; }
+.hsk5bg { background: $hsk5 !important; }
+.hsk6bg { background: $hsk6 !important; }
+.hsk7bg { background: $hsk7 !important; }
+
+.primbd { border-color: $primary-color !important; }
+.neutbd { border-color: $neutral !important; }
+
+.hsk1bd { border-color: $hsk1 !important; }
+.hsk2bd { border-color: $hsk2 !important; }
+.hsk3bd { border-color: $hsk3 !important; }
+.hsk4bd { border-color: $hsk4 !important; }
+.hsk5bd { border-color: $hsk5 !important; }
+.hsk6bd { border-color: $hsk6 !important; }
+.hsk7bd { border-color: $hsk7 !important; }
+
+// Ruby and Pinyin
+
+ruby {
+	padding:0.5rem;
+	line-height: 2.5rem;
+
+	&.right_unlinkable {
+		padding-right: 0rem !important;
+	}
+
+	&.unlinkable {
+		padding: 0rem !important;
+	}
+
+	&.hidePinyin {
+		padding: 0rem !important;
+	}
+
+	rt {
+		color: gray;
+		font-family: Helvetica;
+
+		&.hidePinyin {
+			display:none;
+		}
+	}
+}
+
+.hsk1fg { rt { color: $hsk1; } }
+.hsk2fg { rt { color: $hsk2; } }
+.hsk3fg { rt { color: $hsk3; } }
+.hsk4fg { rt { color: $hsk4; } }
+.hsk5fg { rt { color: $hsk5; } }
+.hsk6fg { rt { color: $hsk6; } }
+.hsk7fg { rt { color: $hsk7; } }
+
+
+// Spinner
+
+.fa-spin-hover:hover {
+	-webkit-animation: fa-spin 2s infinite linear;
+	-moz-animation: fa-spin 2s infinite linear;
+	-o-animation: fa-spin 2s infinite linear;
+	animation: fa-spin 2s infinite linear;
+}
+
+// Unnumbered lists
+
+ul.bicolumn {
+	columns: 2;
+  	-webkit-columns: 2;
+  	-moz-columns: 2;
+}
+
+ul.nobullets {
+	list-style-type: none;
+}
+
+// Disallow text selection
+
+.noselect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+// Tooltip styling
+
+.tooltipster-sidetip {
+ 	font-size: 12px;
+}
+
+.tooltipster-box {
+	b {
+		font-weight: 500;
+	}
+}
+
+// Clickable wordlink styling
+
+a.wordlink {
+	text-decoration: none;
+	color: #000;
+	transition: none !important;
+	&:hover {
+		text-decoration: none !important;
+		color: #951f15;
+
+		rt {
+			color: #951f15;
+		}
+		transition: none !important;
+	}
+}
+
+.wordlinked {
+	font-weight: 500;
+
+	ruby {
+		line-height: 1rem;
+		padding: 0;
+		padding-right: 0.5rem;
+	}
+}
+
+// Fullpage fading-type separator line
+
+.fading_separator{ 
+    display:block;
+    border:none;
+    color:white;
+    height:1px;
+
+    background:black;
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 150, from(#000), to(#fff));
+    @include breakpoint($small) { background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 150, from(#000), to(#fff)); }
+	@include breakpoint($medium) { background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 250, from(#000), to(#fff)); }
+	@include breakpoint($medium-wide) { background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 300, from(#000), to(#fff)); }
+	@include breakpoint($large) { background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 330, from(#000), to(#fff)); }
+	@include breakpoint($x-large) { background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#000), to(#fff)); }
+
+	&.grayish {
+		background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 150, from(#BDBDBD), to(#fff));
+	    @include breakpoint($small) { background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 150, from(#BDBDBD), to(#fff)); }
+		@include breakpoint($medium) { background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 250, from(#BDBDBD), to(#fff)); }
+		@include breakpoint($medium-wide) { background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 300, from(#BDBDBD), to(#fff)); }
+		@include breakpoint($large) { background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 330, from(#BDBDBD), to(#fff)); }
+		@include breakpoint($x-large) { background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#BDBDBD), to(#fff)); }
+	}
+}
+
+.pagination {
+	@include clearfix();
+	@extend .noselect;
+
+	float: left;
+	margin-top: 1em;
+	padding-top: 1em;
+	width: 100%;
+	display: flex;
+	justify-content:center;
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		font-family: $sans-serif;
+	}
+
+	li {
+		display: block;
+		float: left;
+		margin-left: -1px;
+
+		a {
+			display: block;
+			margin-bottom: 0.25em;
+			padding: 0.5em 1em;
+			font-family: $sans-serif;
+			font-size: 14px;
+			font-weight: bold;
+			line-height: 1.5;
+			text-align: center;
+			text-decoration: none;
+			color: #666;
+			border: 1px solid mix(#000, $border-color, 25%);
+			border-radius: 0;
+
+			&:hover {
+				color: $link-color-hover;
+			}
+		}
+
+		&.active,
+		&.active.disabled {
+			color: white;
+			
+			a {
+				color: white;
+				background: $primary-color;
+			}
+		}
+
+		&.disabled {
+			pointer-events: none;
+			cursor: not-allowed;
+
+			a {
+				color: #BBB;
+			}
+		}
+
+		&:first-child {
+			margin-left: 0;
+
+			a {
+				border-top-left-radius: $border-radius;
+				border-bottom-left-radius: $border-radius;
+			}
+		}
+
+		&:last-child {
+			a {
+				border-top-right-radius: $border-radius;
+				border-bottom-right-radius: $border-radius;
+			}
+		}
+	}
+}

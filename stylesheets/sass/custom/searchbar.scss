@@ -1,0 +1,154 @@
+/***************************************
+ Standard Chinese Academy
+ Website
+
+ The dictionary search bar
+
+ @file: searchbar.scss
+ ***************************************/
+
+#searchbar {
+	position: relative;
+	-webkit-animation: $intro-transition;
+	animation: $intro-transition;
+	-webkit-animation-delay: 0.15s;
+	animation-delay: 0.15s;
+	z-index: 20;
+
+	background:#EEE;
+
+	&.bordered-bottom {
+		border-bottom: 1px solid $border-color;
+	}
+
+	#searchbar-wrapper {
+		@include clearfix;
+
+	    margin-left: auto;
+	    margin-right: auto;
+	    padding: 1em;
+	    max-width: 100%;
+	    display: -webkit-box;
+	    display: -ms-flexbox;
+	    display: flex;
+	    -webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	    justify-content: space-between;
+	    font-family: $sans-serif-narrow;
+
+	    padding-top: 0.5em; 
+	    padding-bottom: 0.5em;
+
+	    @include breakpoint($x-large) {
+	      max-width: $max-width;
+	    }
+
+	    #searchbar-title {
+			margin-left: 0;
+			margin-right: 20px;
+			padding: 0.3em;
+			padding-left: 0;
+			font-weight: 500;
+		}
+
+		form {
+			background: #EEE; 
+			padding: 0; 
+			width: 100%;
+			margin-bottom: 0;
+
+			.typeahead__query {
+				flex-grow: 70;
+				width: 0 !important;
+
+				.search_icon {
+					position:absolute;
+					color: gray;
+					padding-left: 0.5em;
+					padding-top: 0.7em;
+				}
+
+				input.js-typeahead {
+					min-height: 0; 
+					padding-left: 40px;
+					box-shadow: none;
+
+					&.chinese:focus {
+						border: 1px solid #d80529 !important;
+					}
+
+					&.english:focus {
+						border: 1px solid #0153b4 !important;
+					}
+				}
+			}
+
+			.typeahead__result {
+
+				.typeahead__list {
+					max-height: 250px;
+				   	overflow-y: auto;
+				   	background-color: white;
+
+				   	box-shadow: 0 5px 30px rgba(0,0,0,.2);
+				    border-radius: 0px;
+				    border-bottom-left-radius: 5px;
+				    border-bottom-right-radius: 5px;
+				    padding: 0 !important;
+
+				    .typeahead__item {
+	 					margin: 0;
+
+	 					&>a {
+	 						transition: none;
+	 					}
+
+	 					.searchlemma {
+	 						font-size: 1.2em;
+	 					}
+
+	 					.searchpinyin {
+	 						color: gray; 
+	 						padding-top: 0.25em;
+	 						margin-left: 0.5em;
+	 					}
+
+	 					.hskbadge {
+ 							float:right;
+ 						}
+	 				}
+				}
+			}
+
+			#flags {
+				flex-grow: 1;
+				text-align: right;
+
+				.flag {
+			    	filter: grayscale(100%);
+			    	opacity: 0.5;
+			    	cursor: pointer;
+
+			    	width: 38px !important;
+			    	height: 38px !important;
+
+			    	@include breakpoint($small) { width: 38px !important; height: 38px !important; }
+			    	@include breakpoint($medium) { width: 42px !important; height: 42px !important; }
+			    	@include breakpoint($medium-wide) { width: 42px !important; height: 42px !important; }
+			    	@include breakpoint($large) { width: 47px !important; height: 47px !important; }
+			    	@include breakpoint($x-large) { width: 51px !important; height: 51px !important; }
+
+			    	&:hover {
+			    		opacity: 1.0;
+			    	}
+
+			    	&.active {
+			    		filter: none;
+			    		opacity: 1.0;
+			    		transition: none;
+			    	}
+				}
+			}
+		}
+	}
+}

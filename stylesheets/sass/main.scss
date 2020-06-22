@@ -1,0 +1,37 @@
+/***************************************
+ Standard Chinese Academy
+ Website
+
+ Custom theme for SCA
+
+ @file: main.scss
+ ***************************************/
+
+@charset "utf-8";
+
+@import "custom/variables"; 
+
+@import "custom/3rdparty/breakpoint/breakpoint";
+@include breakpoint-set("to ems", true);
+
+@import "custom/base";
+@import "custom/mixins";
+@import "custom/global";
+@import "custom/tiles";
+@import "custom/audioclip";
+
+//@import "custom/icons";
+@import "custom/topmenu"; 
+@import "custom/searchbar"; 
+@import "custom/breadcrumbs";
+@import "custom/hero";
+@import "custom/timeline";
+@import "custom/layout";
+@import "custom/badges";
+@import "custom/buttons";
+
+@import "custom/lemma";
+@import "custom/shop";
+@import "custom/tool";
+
+@import "custom/footer"; 

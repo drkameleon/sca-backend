@@ -1,0 +1,79 @@
+/***************************************
+ Standard Chinese Academy
+ Website
+
+ The homepage hero
+
+ @file: hero.scss
+ ***************************************/
+
+#hero {
+	@include clearfix;
+
+	// position: sticky; 
+	// top: 0;
+	// z-index: 19;
+
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	-webkit-animation: $intro-transition;
+	animation: $intro-transition;
+	-webkit-animation-delay: 0.25s;
+	animation-delay: 0.25s;
+
+	-webkit-box-shadow: inset -1px 9px 7px -11px rgba(0,0,0,0.75);
+	-moz-box-shadow: inset -1px 9px 7px -11px rgba(0,0,0,0.75);
+	box-shadow: inset -1px 9px 7px -11px rgba(0,0,0,0.75);
+
+	margin-bottom: 0em;  
+    background-repeat: repeat-x;
+
+	padding: 0; 
+	padding-top: 0.3em; 
+	padding-bottom: 0.4em;
+
+	background-color: #5e616c; 
+	background-image: url(/images/home_hero.jpg);
+
+	#hero_wrapper {
+		margin-top: 0;
+  		line-height: 1;
+		padding-left: 1.3em;
+      	padding-right: 1em;
+      	padding-top:2rem;
+      	padding-bottom: 1rem;
+      	margin-left: auto;
+      	margin-right: auto;
+      	clear: both;
+
+      	text-align: center;
+
+      	color: #f5f5f5;
+      	text-shadow: 1px 1px 4px rgba(#000, 0.5);
+      	font-size: 0.8em;
+      	font-weight: 300;
+
+      	@include breakpoint($large) {
+        	text-align: left;
+      	}
+
+      	@include breakpoint($x-large) {
+        	max-width: $x-large;
+      	}
+
+		h1.hero_title {
+			font-size: 2.5rem;
+			line-height: 3rem;
+		}
+
+		p.hero_description {
+			font-size: 1.5rem;
+			line-height: 2rem;
+
+			u {
+				border-color: white;
+			}
+		}
+	}
+}

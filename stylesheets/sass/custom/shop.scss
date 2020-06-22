@@ -1,0 +1,139 @@
+/***************************************
+ Standard Chinese Academy
+ Website
+
+ The bookstore
+
+ @file: shop.scss
+ ***************************************/
+
+#storefront {
+	margin-bottom: 3rem;
+
+	h1 {
+		margin: 3rem;
+		font-size: 2rem;
+		text-align: center;
+	}
+
+	.product_wrapper {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		padding: 2rem;
+
+		@include breakpoint(max-width $large) {
+			flex-direction: column;
+		}
+
+		.product {
+			flex: 1 1 40%;
+
+			display: flex;
+			flex-direction: row;
+
+		    margin: 10px;
+		    background: white;
+		    border: 1px solid #DDD;
+
+		    -moz-box-shadow: 0 0 0.3rem #ccc;
+			-webkit-box-shadow: 0 0 0.3rem #ccc;
+			box-shadow: 0 0 0.3rem #ccc;
+
+			@include breakpoint(max-width $medium) {
+				flex-direction: column;
+				align-items: center;
+			}
+
+		    img.product_image {
+				flex: 0 0 50%;
+				width: 50%;
+
+				@include breakpoint(max-width $medium) {
+					margin-bottom: 2rem;
+				}
+		    }
+
+		    .product_details {
+		    	padding: 1rem;
+		    	padding-left: 1.5rem;
+		    	padding-right: 1.5rem;
+		    	display: flex;
+		    	flex-direction: column;
+
+		    	.product_series {
+		    		color: gray;
+		    		font-size: 0.6rem;
+		    		text-transform: uppercase;
+		    	}
+
+		    	.product_title {
+		    		
+		    		font-weight: 500;
+		    		padding-bottom: 1rem;
+		    		//border-bottom: 1px solid #666;
+		    	}
+
+		    	.product_description {	
+		    		flex: 1 0 auto;
+		    		//text-align: justify;
+		    		font-size: 0.7rem;
+		    		color: #666;
+		    	}
+
+		    	.product_full {
+		    		flex: 1 0 auto;
+		    		font-size: 0.8rem;
+
+		    		b, strong {
+		    			font-weight: 500;
+		    		}
+		    	}
+
+		    	a.gotoproduct {
+		    		text-align: center;
+		    		color: black;
+
+		    		@include breakpoint(max-width $medium) {
+						margin-top: 1rem;
+					}
+		    	}
+		    }
+
+		    &:hover {
+		    	-moz-box-shadow: 0 0 1rem #ccc;
+				-webkit-box-shadow: 0 0 1rem #ccc;
+				box-shadow: 0 0 1rem #ccc;
+
+				.product_title {
+					color: $primary_color;
+				}
+
+			}
+		}
+
+		&.single {
+			.product {
+				border: 0 !important;
+				box-shadow: none !important;
+
+				img.product_image {
+					flex: 0 0 40%;
+					width: 40%;
+				}
+
+				.product_details {
+					.product_description {
+						flex: 0 0 auto !important;
+					}
+				}
+
+				&:hover {
+					.product_title {
+						color: black !important;
+					}
+				}
+			}
+		}
+	}
+}

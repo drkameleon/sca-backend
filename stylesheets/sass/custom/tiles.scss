@@ -1,0 +1,193 @@
+/***************************************
+ Standard Chinese Academy
+ Website
+
+ Grammar pages
+
+ @file: tiles.scss
+ ***************************************/
+
+ .tile_container {
+ 	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+
+	.tile {
+
+		flex: 0 1 29%;
+
+		@include breakpoint(max-width $medium-wide) {
+	 		flex: 0 1 29%;
+		}
+
+		@include breakpoint(max-width $medium) {
+	 		flex: 0 1 45%;
+		}
+
+		@include breakpoint(max-width $small) {
+	 		flex: 0 1 99%;
+		}
+
+		cursor: pointer;
+
+		display: flex;
+		flex-direction: column;
+	    margin: 0.8rem;
+	    margin-top: 0;
+    	margin-bottom: 1.6rem;
+	    background: white;
+	    border: 1px solid #DDD;
+
+	    color: #888;
+
+	    -moz-box-shadow: 0 0 0.3rem #ccc;
+		-webkit-box-shadow: 0 0 0.3rem #ccc;
+		box-shadow: 0 0 0.3rem #ccc;
+
+	    border: 0;
+	    border-bottom-width: 0.3rem;
+	    border-bottom-style: solid;
+
+	    img {
+	    	filter: grayscale(100%);
+	    	opacity: 0.9;
+	    }
+
+	    .tile_caption {
+	    	padding: 1rem;
+	    	font-weight: 500;
+	    	display: flex;
+
+	    	a.wordlink {
+	    		color: #888;
+
+	    		&:hover {
+	    			color: $primary-color !important;
+	    		}
+	    	}
+
+	    	&:hover a.wordlink {
+	    		color: black;
+	    	}
+
+	    	span.audioclip {
+				display: none;
+
+				position: inherit;
+			}
+
+	    	.tile_meaning {
+		    	display: none;
+		    	float:right;
+		    	font-size: 0.7rem;
+		    	font-weight: 300;
+
+		    	b {
+		    		font-weight: 400;
+		    	}
+	    	}
+
+	    }
+
+	    &:hover {
+	    	-moz-box-shadow: 0 0 1rem #ccc;
+			-webkit-box-shadow: 0 0 1rem #ccc;
+			box-shadow: 0 0 1rem #ccc;
+
+			color: black;
+
+			img {
+				filter: none;
+				opacity: 1.0;
+			}
+	    }
+
+	    // &.primbd:hover,
+	    // &.neutbd:hover { 
+	    // 	color: $primary-color; 
+	    // }
+
+	    &:active, &:focus {
+	    	color: $primary-color;
+	    }
+
+	    // &.hsk1bd:hover { color: $hsk1; }
+	    // &.hsk2bd:hover { color: $hsk2; }
+	    // &.hsk3bd:hover { color: $hsk3; }
+	    // &.hsk4bd:hover { color: $hsk4; }
+	    // &.hsk5bd:hover { color: $hsk5; }
+	    // &.hsk6bd:hover { color: $hsk6; }
+
+	    &.mini {
+			flex: 0 1 17.6% !important;
+			margin: 0.5rem !important;
+
+			@include breakpoint(max-width $small) {
+	 			flex: 0 1 21% !important;
+			}
+
+			.tile_caption {
+				text-align: center;
+				justify-content: center;
+			}
+		}
+	}
+
+	&.columnized {
+		flex-wrap: nowrap;
+		flex-direction: column;
+
+		a.tile {
+
+			cursor: default;
+			border-bottom-width: 0.2rem;
+			
+			&:not(:first-child) {
+				margin-top: 0 !important;
+			}
+
+			&:not(:last-child) {
+				margin-bottom: 0 !important;
+			}
+
+			&:last-child {
+				border-bottom: 0 !important;
+			}
+
+			.tile_caption {
+				align-items: center;
+				span.audioclip {
+					//flex: 0 1 10%;
+					align-items: center;
+    				justify-content: center;
+    				display: flex;
+				}
+
+				ruby {
+					padding: 0 !important;
+				}
+
+				a {
+					flex: 0 1 20%;
+					align-items: center;
+    				justify-content: center;
+    				display: flex;
+				}
+
+				.tile_meaning {
+					display: inline-block;
+					flex: 0 1 70%;
+					align-items: center;
+    				justify-content: left;
+    				display: flex;
+
+    				div {
+    					text-align: left;
+    				}
+				}
+				
+
+			}
+		}
+	}
+}
