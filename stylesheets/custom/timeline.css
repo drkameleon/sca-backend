@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$hsk1".
-        on line 294 of ./public/stylesheets/sass/custom/timeline.scss
+        on line 313 of ./public/stylesheets/sass/custom/timeline.scss
 
-289:                     width: 100%;
-290:                     filter: grayscale(100%);
-291:                 }
-292:             }
-293: 
-294:             &--step1 { background-color: $hsk1; .head::after { border-color: $hsk1 }}
-295:             &--step2 { background-color: $hsk2; .head::after { border-color: $hsk2 }}
-296:             &--step3 { background-color: $hsk3; .head::after { border-color: $hsk3 }}
-297:             &--step4 { background-color: $hsk4; .head::after { border-color: $hsk4 }}
-298:             &--step5 { background-color: $hsk5; .head::after { border-color: $hsk5 }}
-299:             &--step6 { background-color: $hsk6; .head::after { border-color: $hsk6 }}
+308:                     width: 100%;
+309:                     filter: grayscale(100%);
+310:                 }
+311:             }
+312: 
+313:             &--step1 { background-color: $hsk1; .head::after { border-color: $hsk1 }}
+314:             &--step2 { background-color: $hsk2; .head::after { border-color: $hsk2 }}
+315:             &--step3 { background-color: $hsk3; .head::after { border-color: $hsk3 }}
+316:             &--step4 { background-color: $hsk4; .head::after { border-color: $hsk4 }}
+317:             &--step5 { background-color: $hsk5; .head::after { border-color: $hsk5 }}
+318:             &--step6 { background-color: $hsk6; .head::after { border-color: $hsk6 }}
 
 Backtrace:
-./public/stylesheets/sass/custom/timeline.scss:294
+./public/stylesheets/sass/custom/timeline.scss:313
 /usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/script/tree/variable.rb:49:in `_perform'
 /usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/script/tree/node.rb:50:in `perform'
 /usr/local/rvm/gems/ruby-2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:398:in `visit_prop'
@@ -100,4 +100,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$hsk1\".\A         on line 294 of ./public/stylesheets/sass/custom/timeline.scss\A \A 289:                     width: 100%;\A 290:                     filter: grayscale(100%);\A 291:                 }\A 292:             }\A 293: \A 294:             &--step1 { background-color: $hsk1; .head::after { border-color: $hsk1 }}\A 295:             &--step2 { background-color: $hsk2; .head::after { border-color: $hsk2 }}\A 296:             &--step3 { background-color: $hsk3; .head::after { border-color: $hsk3 }}\A 297:             &--step4 { background-color: $hsk4; .head::after { border-color: $hsk4 }}\A 298:             &--step5 { background-color: $hsk5; .head::after { border-color: $hsk5 }}\A 299:             &--step6 { background-color: $hsk6; .head::after { border-color: $hsk6 }}"; }
+  content: "Error: Undefined variable: \"$hsk1\".\A         on line 313 of ./public/stylesheets/sass/custom/timeline.scss\A \A 308:                     width: 100%;\A 309:                     filter: grayscale(100%);\A 310:                 }\A 311:             }\A 312: \A 313:             &--step1 { background-color: $hsk1; .head::after { border-color: $hsk1 }}\A 314:             &--step2 { background-color: $hsk2; .head::after { border-color: $hsk2 }}\A 315:             &--step3 { background-color: $hsk3; .head::after { border-color: $hsk3 }}\A 316:             &--step4 { background-color: $hsk4; .head::after { border-color: $hsk4 }}\A 317:             &--step5 { background-color: $hsk5; .head::after { border-color: $hsk5 }}\A 318:             &--step6 { background-color: $hsk6; .head::after { border-color: $hsk6 }}"; }

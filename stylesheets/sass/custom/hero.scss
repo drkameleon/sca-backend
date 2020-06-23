@@ -33,8 +33,12 @@
 	padding-top: 0.3em; 
 	padding-bottom: 0.4em;
 
-	background-color: #5e616c; 
-	background-image: url(/images/home_hero.jpg);
+	background-color: #8F8B8E; 
+
+	&.lazyloaded, &.lazyloading {
+		background-image: url(/images/home_hero.jpg);
+		background-image: url(/images/home_hero.webp);
+	}
 
 	#hero_wrapper {
 		margin-top: 0;
@@ -71,7 +75,8 @@
 			font-size: 1.5rem;
 			line-height: 2rem;
 
-			u {
+			.underlined {
+				text-decoration: underline;
 				border-color: white;
 			}
 		}

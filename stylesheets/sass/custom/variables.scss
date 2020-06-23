@@ -23,11 +23,11 @@ $neutral: #888 !default;
 
 // HSK
 
-$hsk1: #fe8b00;
-$hsk2: #709c2e; //#7eb034; //#8BC34A;
-$hsk3: #1c8fff;
+$hsk1: #df7a02; //darken(#fe8b00,6%);
+$hsk2: #6c9c2c; //darken(#709c2e,1.5%); //#7eb034; //#8BC34A;
+$hsk3: #0b86dd; //darken(#1c8fff,3.5%);
 $hsk4: #663399;
-$hsk5: #c61235; //#dc143b;
+$hsk5: #b61235; //#dc143b;
 $hsk6: #654321;
 $hsk7: black;
 
@@ -83,8 +83,7 @@ $sidebar-width: 300px !default;
 //--------------------------
 
 $funny: "Patrick Hand";
-$sans-serif: "Rubik","Source Sans Pro","Muli", "Helvetica", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
-  "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
+$sans-serif: "Rubik","Roboto","Helvetica","Open Sans", sans-serif !default;
 $sans-serif-narrow: $sans-serif !default;
 
 $global-font-family: $sans-serif !default;

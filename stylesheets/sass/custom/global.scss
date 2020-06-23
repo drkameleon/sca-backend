@@ -248,3 +248,16 @@ a.wordlink {
 		}
 	}
 }
+
+// icons
+
+svg.linear {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	vertical-align: -0.05em;
+
+	path {
+		fill: currentColor;
+	}
+}

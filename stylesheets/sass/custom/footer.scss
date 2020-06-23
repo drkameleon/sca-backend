@@ -51,6 +51,9 @@
 				font-family: $sans-serif-narrow;
 				font-size: $type-size-6;
 				text-transform: uppercase;
+
+				margin-left: 0.7rem;
+    			margin-right: 0.7rem;
 			}
 
 			li + li:before {
@@ -65,8 +68,8 @@
 				color: #CCC;
 				text-decoration: none;
 
-				i {
-					margin-right: 0.5em;
+				.linear {
+					margin-right: 0.3rem;
 				}
 
 				&:hover {

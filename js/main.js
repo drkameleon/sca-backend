@@ -292,6 +292,73 @@ function convertText() {
 //--------------------------
 
 $(document).ready(function(){
+    
+
+});
+
+window.onload = function(){
+    // Greedy navigation
+
+    var $btn = $("nav.greedy-nav .greedy-nav__toggle");
+    var $vlinks = $("nav.greedy-nav .visible-links");
+    var $hlinks = $("nav.greedy-nav .hidden-links");
+
+    var numOfItems = 0;
+    var totalSpace = 0;
+    var breakWidths = [];
+
+    // Get initial state
+    $vlinks.children().outerWidth(function (i, w) {
+        totalSpace += w;
+        numOfItems += 1;
+        breakWidths.push(totalSpace);
+    });
+
+    var availableSpace, numOfVisibleItems, requiredSpace;
+
+    function check() {
+        // Get instant state
+        availableSpace = $vlinks.width() - $btn.width();
+        numOfVisibleItems = $vlinks.children().length;
+        requiredSpace = breakWidths[numOfVisibleItems - 1];
+
+        // There is not enough space
+        if (requiredSpace > availableSpace) {
+            $vlinks
+                .children()
+                .last()
+                .prependTo($hlinks);
+            numOfVisibleItems -= 1;
+            check();
+            // There is more than enough space
+        } else if (availableSpace > breakWidths[numOfVisibleItems]) {
+            $hlinks
+                .children()
+                .first()
+                .appendTo($vlinks);
+            numOfVisibleItems += 1;
+            check();
+        }
+        // Update the button accordingly
+        $btn.attr("count", numOfItems - numOfVisibleItems);
+        if (numOfVisibleItems === numOfItems) {
+            $btn.addClass("hidden");
+        } else {
+            $btn.removeClass("hidden");
+        }
+    }
+
+    // Window listeners
+    $(window).resize(function () {
+        check();
+    });
+
+    $btn.on("click", function () {
+        $hlinks.toggleClass("hidden");
+        $(this).toggleClass("close");
+    });
+
+    check();
 
     // Setup reading text popups
 
@@ -335,16 +402,20 @@ $(document).ready(function(){
         });
     }
 
-    // Enable wordlinks
+    if ($.isFunction($.fn.tooltipster)) {
 
-    processWordlinks();
+        // Enable wordlinks
 
-    // Enable other tooltips
+        processWordlinks();
 
-    $('.tooltiped').tooltipster({
-        delay: 500,
-        theme: 'tooltipster-light'
-    }); 
+        // Enable other tooltips
+
+        $('.tooltiped').tooltipster({
+            delay: 500,
+            theme: 'tooltipster-light'
+        }); 
+
+    }
 
     // Enable events & animations for audio play buttons
 
@@ -375,13 +446,64 @@ $(document).ready(function(){
         localStorage.setItem("scaDictLang","Chinese");
     }
 
+    updateLabels();
+
+    // Setup lazy image loading
+
+    // var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+    // var lazyContents = [].slice.call(document.querySelectorAll(".lazyload"));
+
+    // if ("IntersectionObserver" in window) {
+    //     let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+    //         entries.forEach(function(entry) {
+    //             if (entry.isIntersecting) {
+    //                 console.log("showing one image");
+    //                 let lazyImage = entry.target;
+    //                 lazyImage.src = lazyImage.dataset.src;
+    //                 lazyImage.classList.remove("lazy");
+    //                 lazyImageObserver.unobserve(lazyImage);
+    //             }
+    //         });
+    //     });
+
+    //     let lazyContentObserver = new IntersectionObserver(function(entries, observer) {
+    //         entries.forEach(function(entry) {
+    //             if (entry.isIntersecting) {
+    //                 console.log("showing content");
+    //                 let lazyContent = entry.target;
+    //                 $(lazyContent).load(lazyContent.dataset.src);
+    //                 lazyContent.classList.remove("lazyload");
+    //                 lazyContentObserver.unobserve(lazyContent);
+    //             }
+    //         });
+    //     });
+
+    //     lazyImages.forEach(function(lazyImage) {
+    //         lazyImageObserver.observe(lazyImage);
+    //     });
+
+    //     lazyContents.forEach(function(lazyContent) {
+    //         lazyContentObserver.observe(lazyContent);
+    //     });
+    // } else {
+    
+    // }
+
+    // Execute stack of OnLoad functions
+
+    if (typeof window.onloadFunctions !== 'undefined') {
+        for (var i=0; i<window.onloadFunctions.length; i++) {
+            onloadFunctions[i]();
+        }
+    }
+    
     // Get dictionary data and initialize search box
 
     $.ajax({
         type: "GET",
         url: window.rsrcroot + "/static/dict_index.json"
     }).done(function(response){
-        var wordindex = JSON.parse(response);
+        var wordindex = response;
         window.searchurl = {
             "Chinese": "/dictionary/chinese-english/",
             "English": "/dictionary/english-chinese/"
@@ -450,56 +572,4 @@ $(document).ready(function(){
             ].join('\n')
         });
     });
-
-    updateLabels();
-
-    // Setup lazy image loading
-
-    var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-    var lazyContents = [].slice.call(document.querySelectorAll(".lazyload"));
-
-    if ("IntersectionObserver" in window) {
-        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    console.log("showing one image");
-                    let lazyImage = entry.target;
-                    lazyImage.src = lazyImage.dataset.src;
-                    lazyImage.classList.remove("lazy");
-                    lazyImageObserver.unobserve(lazyImage);
-                }
-            });
-        });
-
-        let lazyContentObserver = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    console.log("showing content");
-                    let lazyContent = entry.target;
-                    $(lazyContent).load(lazyContent.dataset.src);
-                    lazyContent.classList.remove("lazyload");
-                    lazyContentObserver.unobserve(lazyContent);
-                }
-            });
-        });
-
-        lazyImages.forEach(function(lazyImage) {
-            lazyImageObserver.observe(lazyImage);
-        });
-
-        lazyContents.forEach(function(lazyContent) {
-            lazyContentObserver.observe(lazyContent);
-        });
-    } else {
-    
-    }
-
-    // Execute stack of OnLoad functions
-
-    if (typeof window.onloadFunctions !== 'undefined') {
-        for (var i=0; i<window.onloadFunctions.length; i++) {
-            onloadFunctions[i]();
-        }
-    }
-
-});
+};
